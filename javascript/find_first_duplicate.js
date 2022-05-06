@@ -1,20 +1,15 @@
+const { ControlPointDuplicateSharp } = require("@mui/icons-material");
+
 function findFirstDuplicate(arr) {
-  // type your code here
-  // need variable for duplicate to be returned
-  // if there are no duplicates return -1
   const duplicate = new Set()
-  // iterate over array to find duplicate value
-  arr.map((number) => {
-    if (duplicate.includes(number)) {
-    return number
-  } else {
+  for (const number of arr) {
+    if (duplicate.has(number)){
+      return number
+    }
     duplicate.add(number)
   }
-   // if there are no duplicates return -1
   return -1
-})
-
-// Given an Array, find the first duplicate value that occurs. If there are no duplicates, return -1.
+}
 
 if (require.main === module) {
   // add your own tests in here
@@ -31,3 +26,8 @@ module.exports = findFirstDuplicate;
 
 // Please add your pseudocode to this file
 // And a written explanation of your solution
+// Given an Array, find the first duplicate value that occurs. If there are no duplicates, return -1.
+// need variable for duplicate to be returned
+// if there are no duplicates return -1
+// iterate over array to find duplicate value
+// if there are no duplicates return -1
